@@ -3,10 +3,13 @@ on:
   workflow_dispatch:
 jobs:
   greet:
+    env:
+      MY_ENV:"Camilo Sesto"
     runs-on: ubuntu-latest
     steps:
       - name: Greet the User
         run: echo "Hello World!"
-      - run: ls -l
-      - uses: actions/checkout@v6
-      - run: ls -l
+      - name: Run a muti-line script
+        run: |
+          echo "Hello $MY_ENV"
+          echo "Hello $GITHUB_ACTOR"
