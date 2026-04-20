@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greet the User
-        - run: echo "Hello World!"
-        - run: ls -l
-        - uses: actions/checkout@v6
-        - ls -l
+        run: echo "Hello World!"
+      - run: ls -l
+      - uses: actions/checkout@v6
+      - run: ls -l
