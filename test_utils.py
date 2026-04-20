@@ -1,39 +1,19 @@
-# Crea un programa Python que resolva o reto FizzBuzz, onde existirá unha función que reciba como parámetro un número e devolverá “fizz” para valores divisibles por 3, “buzz” para valores divisibles por 5 e “ fizz buzz” para valores divisibles ao mesmo tempo por 3 e 5.
-# Crea as probas necesarias para probar o código anterior.
-
 # importar o módulo unittest
 import unittest
-
-# importamos a función fizzbuzz do arquivo funcions_exercicio_1.py
-from funcions_exercicio_1 import fizzbuzz
-
-
+from utils import is_prime
 # Crear unha clase TestUtils que estenda de unittest.TestCase.
-class TestFizzBuzz(unittest.TestCase):
-    # Comprobamos que cos múltiplos de 3 devolve fizz
-    def test_fizz(self):
-        self.assertEqual(fizzbuzz(3), "fizz")
-        self.assertEqual(fizzbuzz(6), "fizz")
-        self.assertEqual(fizzbuzz(9), "fizz")
-
-    # Comprobamos que cos múltiplos de 5 devolve buzz
-    def test_buzz(self):
-        self.assertEqual(fizzbuzz(5), "buzz")
-        self.assertEqual(fizzbuzz(10), "buzz")
-        self.assertEqual(fizzbuzz(20), "buzz")
-
-    # Comprobamos que cos múltiplos de 3 e 5 devolve fizz buzz
-    def test_fizz_buzz(self):
-        self.assertEqual(fizzbuzz(15), "fizz buzz")
-        self.assertEqual(fizzbuzz(30), "fizz buzz")
-        self.assertEqual(fizzbuzz(45), "fizz buzz")
-
-    # Comprobamos que co resto devolve False
-    def test_false(self):
-        self.assertFalse(fizzbuzz(4))
-        self.assertFalse(fizzbuzz(8))
-        self.assertFalse(fizzbuzz(11))
-
+# Recoméndase usar nomes significativos para o nome da clase
+class TestUtils(unittest.TestCase):
+	def test_is_prime(self):
+		self.assertTrue(is_prime(2))
+		self.assertTrue(is_prime(3))
+		self.assertTrue(is_prime(7))
+	def test_non_prime_number(self):
+		self.assertFalse(is_prime(4))
+		self.assertFalse(is_prime(8))
+		self.assertFalse(is_prime(10))
+	def test_negative_number(self):
+		self.assertEqual(is_prime(-3), "Os números negativos non están permitidos")
 
 if __name__ == "__main__":
-    unittest.main()
+	unittest.main()
