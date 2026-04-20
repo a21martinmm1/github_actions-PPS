@@ -2,9 +2,9 @@ name: Tests Python
 on: [push]
 jobs:
     Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Check out repository code
-      uses: actions/checkout@v5
-    - run: python -m unittest test_utils.py
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out repository code
+          uses: actions/checkout@v5
+        - run: python -m unittest test_utils.py
 
