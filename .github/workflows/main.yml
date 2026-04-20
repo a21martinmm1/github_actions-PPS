@@ -4,7 +4,7 @@ on:
 jobs:
   greet:
     env:
-      MY_ENV:"Camilo Sesto"
+      MY_ENV: "Camilo Sesto"
     runs-on: ubuntu-latest
     steps:
       - name: Greet the User
