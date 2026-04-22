@@ -8,11 +8,12 @@ jobs:
       - name: Check out del repositorio
         uses: actions/checkout@v6
       - run: python -m unittest test_utils.py
-      - run: ls -l
   Main:
     runs-on: ubuntu-latest
     needs: Tests
     steps:
+      - name: Check out del repositorio
+        uses: actions/checkout@v6
       - name: Empaquetar main.py
         run: pip install pyinstaller && pyinstaller --onefile main.py
       - name: Proba execucións
