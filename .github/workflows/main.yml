@@ -29,6 +29,6 @@ jobs:
       - name: Subir artefacto
         uses: actions/upload-artifact@v7
         with:
-          name: main
-          path: ./dist
+          name: executable
+          path: ./dist/main
           archive: false
