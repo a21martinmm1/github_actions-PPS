@@ -6,5 +6,9 @@ jobs:
       steps:
         - name: Check out repository code
           uses: actions/checkout@v5
+        - name: Install Python
+          uses: actions/setup-python@v6
+          with:
+            python-version: '3.13' 
         - run: python -m unittest test_utils.py
 
