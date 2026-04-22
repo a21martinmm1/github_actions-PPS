@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: Tests
     steps:
-      - name: Crear entorno virtual
-        run: python3 -m venv .venv && source .venv/bin/activate
       - name: Empaquetar main.py
         run: pip install pyinstaller && pyinstaller --onefile main.py
       - name: Proba execucións
