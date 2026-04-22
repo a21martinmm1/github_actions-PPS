@@ -7,6 +7,10 @@ jobs:
     steps:
       - name: Check out del repositorio
         uses: actions/checkout@v6
+      - name: Install Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'         
       - run: python -m unittest test_utils.py
   Main:
     runs-on: ubuntu-latest
@@ -14,6 +18,10 @@ jobs:
     steps:
       - name: Check out del repositorio
         uses: actions/checkout@v6
+      - name: Install Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'          
       - name: Empaquetar main.py
         run: pip install pyinstaller && pyinstaller --onefile main.py
       - name: Proba execucións
