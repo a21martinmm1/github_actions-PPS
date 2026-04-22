@@ -1,6 +1,5 @@
 name: Empaquetar main despois de tests
-on:
-  workflow_dispatch:
+on: [push]
 jobs:
   Tests:
     runs-on: ubuntu-latest
